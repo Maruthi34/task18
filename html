@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+            height: 100vh;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        main {
+            display: grid;
+            grid-template-areas: 
+                "sidebar content content"
+                "sidebar content content";
+            grid-template-columns: 200px 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+            flex: 1;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .content {
+            grid-area: content;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .content > div {
+            background-color: #e4e4e4;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <main>
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Links and information.</p>
+        </div>
+        <div class="content">
+            <div>
+                <h2>Content 1</h2>
+                <p>Main content area 1.</p>
+            </div>
+            <div>
+                <h2>Content 2</h2>
+                <p>Main content area 2.</p>
+            </div>
+            <div>
+                <h2>Content 3</h2>
+                <p>Main content area 3.</p>
+            </div>
+            <div>
+                <h2>Content 4</h2>
+                <p>Main content area 4.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Footer Information</p>
+    </footer>
+</body>
+</html>
